@@ -10,7 +10,7 @@ app.use(bodyParse.json());
 app.use(routes);
 
 
-app.listen(process.env.port || 4000, function () {
+app.listen(3000, function () {
     console.log('ready')
 });
 
