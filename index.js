@@ -21,7 +21,7 @@ app.listen(3000, function () {
 });
 
 var server = http.Server(app)
-
+var io=require('socket.io')(server);
 io.on('connection', (socket) => {
     console.log('Client connected');
     socket.on('disconnect', () => console.log('Client disconnected'));
