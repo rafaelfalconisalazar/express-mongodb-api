@@ -10,11 +10,16 @@ const productRouter = require("./routers/productRouter");
 
 mongoose.connect("mongodb+srv://rafael:edu900fs@unibe-7ujmc.azure.mongodb.net/unibe?retryWrites=true&w=majority");
 mongoose.Promise = global.Promise;
-
+app.use(cors({
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  }));
 app.use(bodyParse.json());
 app.use(categoryRouter);
 app.use(productRouter);
-app.use(cors());
+
 var server = http.Server(app);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
