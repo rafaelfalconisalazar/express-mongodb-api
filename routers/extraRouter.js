@@ -7,4 +7,9 @@ router.get(uri, function (req, res) {
     res.send("hola mundo");
 })
 
+router.get(uri+"/:id", function (req, res) {
+    let id = req.params.id;
+    res.send("hola: "+idø);
+})
+
 module.exports = router;
