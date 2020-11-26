@@ -4,7 +4,7 @@ const uri = "/api/v1/extra";
 
 router.get(uri, function (req, res) {
 
-    res.send("hola");
+    res.send("hola mundo");
 })
 
 module.exports = router;
